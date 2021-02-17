@@ -1,0 +1,8 @@
+var rose = 1
+var flower1 = (rose, "red")
+var flower2 = (rose, "yellow")
+print(flower2.0)
+print(flower1.1)
+flower.0 = 2222
+print(flower1.0)
+print(flower2.1)
