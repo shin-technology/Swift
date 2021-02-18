@@ -1,0 +1,51 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var str = "Hello, playground"
+var o : Int?
+var a : Int8 = Int8.max
+var b : Int16 = -11
+var c : Int32 = Int32.max
+var d : Int64 = 1
+var e : UInt = 22
+var ee : UInt? = nil
+var f : UInt8 = 33
+var g : UInt16 = 1
+var h : UInt32 = 2
+var i : UInt64 = 4444444444444
+print("\(o)")
+print("\(a)")
+print("\(b)")
+print("\(c)")
+print("\(d)")
+print("\(e)")
+print("\(f)")
+print("\(g)")
+print("\(h)")
+print("\(i)")
+
+let aaa : Double = 2.22222
+let bbb : Float = 3.14159
+let bbbbbb : Float? = nil
+let bbbccc : Float? = 2.2222
+
+print("\(aaa)")
+print("\(bbb)")
+
+let ccc : String = "hello"
+
+print(ccc)
+
+var mybool1 : Bool = true
+let mybool2 : Bool? = nil
+let mybool3 : Bool? = true
+
+print(mybool1)
+print(mybool2)
+
+var mychar : Character = "a"
+print(mychar)
+
+/* Optionals -> 上記の全て + nil */
+// Optionals -> はてな
