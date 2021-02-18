@@ -41,6 +41,7 @@ print(ccc)
 var mybool1 : Bool = true
 let mybool2 : Bool? = nil
 let mybool3 : Bool? = true
+var mybool4 : CVTime?
 
 print(mybool1)
 print(mybool2)
