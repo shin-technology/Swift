@@ -1,0 +1,80 @@
+//: Playground - noun: a place where people can play
+
+import UIKit
+
+var str = "Hello, playground"
+var testNotNil : String? = "test"
+var testIsNil : String? = nil
+
+// ? : Optional タイプ
+
+// 判断するオペレーターが「＝＝」と「！＝」
+// == 等しいかを判断する
+// ！= 等しくないかを判断する
+
+// false
+if testNotNil == nil {
+    print("testNotNil is nil")
+} else {
+    print("testNotNil is not nil")
+}
+
+if testNotNil != nil {
+    print("testNotNil is not nil")
+} else {
+    print("testNotNil is nil")
+}
+
+if testIsNil == nil {
+    print("testIsNil is nil")
+} else {
+    print("testIsNil is not nil")
+}
+
+if testIsNil != nil {
+    print("testIsNil is not nil")
+} else {
+    print("testIsNil is nil")
+}
+
+// IF文
+// IF true
+if true {
+    print("if condition is true and get executed.")
+} else {
+    print("dead block")
+}
+
+// IF false
+if false {
+    print("this will never be executed.")
+} else {
+    print("this will be excuted")
+}
+
+// IF ESLE　文
+if false {
+    print("this will never be executed.")
+} else {
+    print("let us see whether this will be printed")
+}
+
+var test : String? = nil
+
+if let hehehe = test {
+    print(hehehe)
+}
+
+// ① optional ?
+// ② optional !
+var testImplicitUnwrappedOptional : String! = "hi"
+
+print(testImplicitUnwrappedOptional)
+
+var test2 : String = testImplicitUnwrappedOptional
+print(test2)
+
+
+var dangerousOptional : String! = nil
+
+var errorString : String = dangerousOptional
