@@ -89,4 +89,51 @@ two
 
 print(goodStart)
 
+var greeting = "123456789"
+print(greeting.startIndex.encodedOffset)
+print(greeting.endIndex.encodedOffset)
+print(greeting[greeting.startIndex])
+print(greeting[greeting.index(before: greeting.endIndex)])
+// (xxxx) 函数
+// func -> function 函数
+let indexTest = greeting.index(greeting.startIndex, offsetBy: 7)
+print(greeting[indexTest])
 
+// 1.index　インデックス
+// 2.offset オフセット(based on index)
+// [a][b][c](d:index 3)[e:offset 1][f:offset 2][g: offset 3][h][i][j]
+
+// swift:[a],[b],[c]
+
+for index in greeting.indices {
+    print("\(greeting[index]) ", terminator: "")
+}
+print(greeting.indices.endIndex.encodedOffset)
+
+// prefix
+var demo = "aaabbbccc"
+print(demo.hasPrefix("aaabbb"))
+
+// suffix
+print(demo.hasSuffix("bbccc"))
+
+// 包含
+print(demo.contains("a"))
+print(demo.contains("b"))
+print(demo.contains("c"))
+
+// utf-8
+var testUTF8 = "aadada"
+for test in testUTF8.utf8 {
+    print(test)
+}
+
+//  utf-16
+for test in testUTF8.utf16 {
+    print(test)
+}
+
+// unicode
+for test in testUTF8.unicodeScalars {
+    print(test.value)
+}
