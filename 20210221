@@ -24,4 +24,69 @@ print(quotation3)
 let unicodeTest = "\u{22220}"
 print(unicodeTest)
 
+//: Playground - noun: a place where people can play
+
+import UIKit
+// 直接声明
+var emptyString = "abc"
+// 利用函数产生一个字符串
+var emptyString2 = String()
+
+if emptyString != emptyString2 {
+    print("they are not the same!")
+}
+
+if emptyString.isEmpty {
+    print("this is empty!")
+}
+
+print(emptyString.count)
+
+var variableString = "Horse"
+variableString += " and carriage"
+// variableString is now "Horse and carriage"
+
+var constantString = "Highlander"
+constantString += " and another Highlander"
+// this reports a compile-time error - a constant string cannot be modified
+
+// swift数据类型分类
+// 1. 数值类型 Sting， Structure， Enumeration
+// 2. 对象类型
+
+let catCharacters: [Character] = ["C", "a", "t", "!", "🐱"]
+// () -> 函数
+let catString = String(catCharacters)
+print(catCharacters)
+print(catString)
+print(catString.count)
+// Prints "Cat!🐱"
+
+var before = "aaa"
+var after = "bbb"
+var combined = before + after
+print(combined)
+
+before += "bbb"
+// +=
+// 1. +运算
+// 2. 把值重新赋予自己
+
+print(before)
+
+var appendtest = "aaa"
+
+appendtest.append("bbb")
+
+print(appendtest)
+
+let goodStart = """
+one
+dadasdasdads
+dasdasdasdasdasd
+two
+"""
+
+print(goodStart)
+
 
