@@ -1,0 +1,27 @@
+var stringText : String = "test \"\\test"
+var charText : Character = "a"
+
+print(stringText)
+print(charText)
+
+let quotation = "\""
+print(quotation)
+let quotation1 = "'"
+let quotation2 = "*"
+let quotation3 = "\\"
+print(quotation3)
+
+// escaped special characters list:
+// \0
+// \\
+// \t ->制表符
+// \n ->line feed
+// \r ->carriage return
+// \"
+// \'
+
+// Unicode
+let unicodeTest = "\u{22220}"
+print(unicodeTest)
+
+
