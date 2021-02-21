@@ -1,0 +1,10 @@
+作业:
+1.把自己的三围用字符串(String)表示出来，并且打印。
+2.把1的自己三围字符串里面的字符(Character)遍历一遍，并且把每个字符打印出来
+3.把自己的三围字符串和身高字符串连接起来(连接方式自取)，并且打印
+4.把3里面连接完的字符串的长度打印出来
+5.把3里面字符串的UTF-8， UTF-16， Unicode编码打印出来
+※三围不得做假
+
+参考页面:
+https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
