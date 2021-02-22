@@ -1,0 +1,66 @@
+// Array -> list 但是里面的值的类型要一模一样
+// 1.[]
+// 2.Array<>
+// 3.[String]()
+
+var array1 = ["bb", "cc"]
+var array2 = Array<String>(repeating:"aa", count:10)
+var array3 = [String](repeating:"aa", count:10)
+
+print(array1)
+print(array2)
+print(array3)
+
+var arrayAdded = array1 + array2
+print(arrayAdded)
+// Java,swift
+arrayAdded.append("test")
+print(arrayAdded)
+
+arrayAdded[4...9] = ["Bananas", "Apples", "orange"]
+print(arrayAdded)
+
+arrayAdded.insert("inserted", at:2)
+print(arrayAdded)
+
+arrayAdded.remove(at:2)
+print(arrayAdded)
+
+// java swift enumerated 遍历Array
+for item in arrayAdded {
+    print(item)
+}
+
+for (啊啊啊, 嗷嗷好舒服) in arrayAdded.enumerated(){
+    print(啊啊啊)
+    print(嗷嗷好舒服)
+}
+
+// swift java
+// Sets -> 1.不会有重复的值 2.散乱的,不给你排序
+// 散乱的
+var mySet1 = Set<String>()
+mySet1.insert("a")
+mySet1.insert("a")
+mySet1.insert("a")
+mySet1.insert("a")
+mySet1.insert("a")
+
+for item in mySet1 {
+    print(item)
+}
+
+// dictionary
+// 1. 1对1，不得出轨
+// 2. 无序
+// 集体婚礼
+var myDictionary : [String:String] = ["arashi" : "xin xin jie jie", "wo" : "yue nan mei zi"]
+print(myDictionary)
+
+// Optional
+print(myDictionary["arashi"]!)
+print(myDictionary["wo"])
+
+for item in myDictionary {
+    print(item)
+}
