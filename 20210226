@@ -1,0 +1,69 @@
+
+// 函数的基本形式
+
+// 定义，雏型，规定，约定，规范，预置，任务
+// 打印函数
+// message: parameter パラメータ
+// -> 后面接的东西: 返回值、返却値。
+// {} 函数体 里面是具体处理
+func dayin(message : String) -> Bool {
+    print(message)
+    return true
+}
+
+// 执行，运行，运算，跑代码
+let returnValue = dayin(message:"abc")
+print(returnValue)
+
+// 打怪兽函数 定义
+// 标签
+func daguaishou(打怪数 : Int) -> Void{
+    for item in 1...打怪数 {
+        print("打死了" + String(item) + "只怪兽")
+    }
+}
+
+// 电脑去打怪 函数执行
+// QA:如何去调用函数？ 写出函数名，然后带入参数
+let void = daguaishou(打怪数 : 10)
+print(void)
+
+func printSomething() {
+}
+
+printSomething()
+
+// 语言特性
+// java 函数的参数默认可变
+// swift 函数的参数默认不可变。安全。Function parameters are constants by default. 
+
+func swapTwoInts(_ a: inout Int, _ b: inout Int) {
+    let temporaryA = a
+    a = b
+    b = temporaryA
+}
+
+var a = 1;
+var b = 2;
+//  &获取内存地址
+swapTwoInts(&a, &b)
+
+// 1.函数类型是一种类型，且是对象类型
+// 2.他的调用和函数本身一样
+// 形式: (Type1,Type2 ...) -> TypeReturn
+var myFunctionTypeVal : (inout Int, inout Int) -> Void
+myFunctionTypeVal = swapTwoInts
+
+myFunctionTypeVal(&a, &b)
+
+// nested function
+func outFunction(_ param : Int) -> Int {
+    let innerVal = 11;
+    func innerFunction(_ param : Int) -> Int {
+        return innerVal;
+    }
+    innerFunction(2)
+    return 2;
+}
+
+outFunction(1)
