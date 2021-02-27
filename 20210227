@@ -1,0 +1,127 @@
+// Your code here!
+
+print("XXXXXXXX")
+
+let names = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+
+// 省略 return
+// 冒泡算法
+// func 函数 backward 函数名
+func backward(_ s1: String, _ s2: String) -> Bool {
+    s1 < s2
+}
+
+var fixed = {(_ s1: String, _ s2: String) -> Bool in
+    s1 < s2
+}
+
+// closure 形式
+var myClosure = { (_ s1: String, _ s2: String) -> Bool in
+    s1 > s2
+}
+
+// closure形式
+myClosure("1", "2")
+
+// 省略函数参数标签 _。 
+backward("1", "2")
+
+// Array的排序方法 sorted。
+// sorted方法只有一个参数，此参数为函数类型
+// 然后调用，把backward作为参数传进去
+// 最后给我们返回一个Array
+var reversedNames = names.sorted(by: backward)
+
+print(reversedNames)
+
+// Closures(全集带s) 具体的处理
+// 1.Global Function
+// 2.Nested Function
+// 3.Closure
+
+// 1.全局函数 https://docs.swift.org/swift-book/LanguageGuide/Functions.html
+// 带 func 关键字
+
+// 2.内部函数
+// 1里面再包含又一个func
+// func XXXXX {
+//    func YYYY {
+//        
+//    }
+//}
+
+// 3.Closure 不带func的函数，或者是把它当成一个处理模块
+// {} -> 扩展出来带参数，带返回值带处理，没有名字。可能别的一些语言里面，叫做无名函数
+
+// 把myClosure作为参数传进去
+var reversedNamesByClosure = names.sorted(by: myClosure)
+print(reversedNamesByClosure)
+
+// Why? The usage of closure is the same as function?
+// Answer: In swift a function is the data type of [Function Types]. Also is closure.
+// Closures -> They are all reference type.本质上是同样一个东西。
+
+// 简单类型
+// 型定义 Int
+let myInt : Int = 1
+// 型定义 String
+let myString : String = "2"
+
+// 复杂类型
+// 型定义 (Int, String) -> Bool
+// let 常量 closuresType 常量名
+let closuresType : (Int, String) -> Bool = {(_ s1 : Int, _ s2 : String) -> Bool in
+    return true
+}
+
+// 还原成函数的写法
+func testFunc(_ s1 : Int, _ s2 : String) -> Bool {
+    return true
+}
+
+// in 只有closure才有
+let xxx = {(_ s1 : Int, _ s2 : String) -> Bool in
+    return true
+}
+
+// Void 没有返回值
+// {}: this is a closure
+let hardMode : () -> Void = {() -> Void in 
+}
+
+// Trailing Closures
+// 在第二个参数为closure的情况下，调用的时候可以把内部的closure提出来
+func trailingClosures(s1 : Int, s2 : (Bool) -> Int) {
+}
+trailingClosures(s1 : 1, s2 : {(Bool) -> Int in return 1})
+trailingClosures(s1 : 1) {(Bool) -> Int in return 1}
+
+/////////////////////////////////////////////////////////////////////
+// var 变量
+var customersInLine = ["Chris", "Alex", "Ewa", "Barry", "Daniella"]
+var customerProviders: [() -> Void] = []
+func collectCustomerProviders(_ customerProvider: @autoclosure @escaping () -> Void) {
+    customerProviders.append(customerProvider)
+}
+// statement -> auto transfer to closure by statement
+collectCustomerProviders(print("Hello"))
+
+let afterTransfer = {() -> Void in 
+    print("Hello")
+}
+
+func printTest1(_ result: () -> Void) {
+    print("Before")
+    result()
+    print("After")
+}
+
+printTest1({ print("Hello") })
+
+func printTest2(_ result: @autoclosure () -> Void) {
+    print("Before")
+    result()
+    print("After")
+}
+
+printTest2(print("Hello"))
