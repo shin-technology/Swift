@@ -9,3 +9,38 @@
 参考页面:
 https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
 
+
+1.let bwhStr : String = "83,54,84"
+  print(bwhStr)
+  
+2.let bwhCharacters : [Character] = ["8","3",",","5","4",",","8","4"]
+  let bwhStr = String(bwhCharacters)
+  print(bwhStr)
+   
+3.let b = "83"
+  let w = "54"
+  let h = "84"
+  let height = "152"
+  let concatenate = b + w + h + height
+  print(concatenate)
+  
+4.let concatenate3 = b + w + h + height
+  print(concatenate3.count)
+  
+5.打出来不是想要的效果
+for codeUnit in concatenate.utf8 {
+    print("\(codeUnit) ", terminator: "")
+}
+print("")
+
+for codeUnit in concatenate.utf16 {
+    print("\(codeUnit) ", terminator: "")
+}
+print("")
+
+
+for scalar in concatenate.unicodeScalars {
+    print("\(scalar.value) ", terminator: "")
+}
+print("")
+
