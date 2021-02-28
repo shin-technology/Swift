@@ -43,4 +43,3 @@ for scalar in concatenate.unicodeScalars {
     print("\(scalar.value) ", terminator: "")
 }
 print("")
-
