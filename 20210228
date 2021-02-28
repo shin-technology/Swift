@@ -1,0 +1,85 @@
+// 动物
+// :继承或者实现
+enum Animal: CaseIterable{
+//    case cat
+//    case dog
+    case cat, dog
+}
+
+for caseItem in Animal.allCases {
+    print(caseItem)
+}
+
+print(Animal.allCases.count)
+
+// associated values
+enum myAssociated {
+    case man(Int, String)
+    case woman(Int, Int, Int)
+}
+
+var value1 = myAssociated.woman(84, 58, 85)
+
+value1 = myAssociated.man(88, "old man")
+value1 = myAssociated.man(99, "old man")
+print(value1)
+
+import Foundation
+
+// 枚举 人
+enum Human {
+//    case man
+//    case woman
+    case man, woman
+}
+
+// 动物
+enum Animal {
+//    case cat
+//    case dog
+    case cat, dog
+}
+
+// 空的枚举
+enum Nothing {
+}
+
+print(type(of: "man and woman and child happy family"))
+print(type(of: Human.woman))
+
+// String Human(这是一种类型)
+// enum 是好东西。类型安全🔐。当case少的时候，尽量去用。
+
+// Human型的实例
+var manVar : Human = .man
+let womanVar : Human = .woman
+manVar = .woman
+
+print(manVar)
+print(womanVar)
+
+switch manVar {
+case .man:
+    print("man")
+case .woman:
+    break
+default:
+    print("woman")
+}
+
+// 枚举的遍历 CaseInterable
+
+// associated values
+// raw value
+
+enum rawValue: Int {
+    case one = 1, two, three
+}
+
+print(rawValue.two.rawValue)
+
+enum rawStringValue: String {
+    case one, two, three
+}
+
+print(rawStringValue.one.rawValue)
