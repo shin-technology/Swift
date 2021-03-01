@@ -1,0 +1,49 @@
+// struct
+struct Human {
+    // Property
+    var nianling : Int = 22 // default value
+    var xingbie : String = "man" // default value
+    
+    // Method
+    func printMe() {
+        print("I am human.")
+    }
+}
+
+// class
+class People {
+    // Property
+    var nianling : Int = 33 // default value
+    var xingbie : String = "woman" // default value
+    
+    // Method
+    func printMe() {
+        print("I am People.")
+    }
+}
+
+// 区别1，struct提供一个默认的构造方法
+var human1 = Human(nianling : 60, xingbie : "renyao")
+human1.printMe()
+
+// class不提供默认的构造方法
+var people1 = People()
+people1.printMe()
+
+// 区别2!!! 重要!!!!!!
+// struct 数值类型 value type String Int Double Array...
+// class 参照类型 reference type
+var human2 = human1 // 赋值 数值的copy
+var people2 = people1 // 赋值 参照的传递
+
+human2.nianling = 99
+people2.nianling = 99
+
+print(String(human1.nianling) + human1.xingbie)
+print(human2.nianling)
+
+print(people1.nianling)
+print(people2.nianling)
+
+print(people1 === people2)
+print("111" == "111")
