@@ -1,0 +1,4 @@
+作业：
+1.定义一个Class，并在Class内声明两个Properties，并把它初始化后，给两个Properties赋值，最后把两个Properties打印
+2.定义一个Struct，并在Class内声明两个Properties，并把它用swift提供的带参数标签的初始化方法初始化后，给两个Properties赋值，最后把两个Properties打印
+3.定义一个类型，Enumeration，Class，Struct自选，并在里面声明一个Computed Properties，最后调用它的get，set语句块，并把它打印。
