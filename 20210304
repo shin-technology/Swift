@@ -1,0 +1,42 @@
+// Properties 相当于写在Struct，Class，Enumeration里面的变量，或常量的声明
+
+// struct
+struct Test {
+    // Stored Properties
+    let p1 = 2
+    var p2 = "test"
+    
+    init(p2 : String) {
+        print("I am in init.")
+    }
+    
+    // Computed Properties
+    var p3 : String {
+        get {
+            print("I am in get.")
+            return p2
+        }
+        set {
+            print("I am in set.")
+            p2 = newValue
+        }
+    }
+}
+
+// struct Read-Only Properties
+struct Test2 {
+    // Stored Properties
+    var p1 = 2
+    var p2 = "test"
+    
+    // Computed Properties
+    var p3 : String {
+        return p2
+    }
+}
+
+var myTest = Test(p2 : "hello world")
+myTest.p3
+myTest.p3 = "input to computed properties"
+print(myTest.p3)
+
