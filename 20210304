@@ -40,3 +40,84 @@ myTest.p3
 myTest.p3 = "input to computed properties"
 print(myTest.p3)
 
+//  Method 定义在类型里面的Function
+// 1. 实例方法
+struct MyStruct {
+    var p1 : Int
+    
+    // struct里的 实例方法
+    func myFuncInStruct(p1 : Int) -> Bool {
+        return p1 > self.p1
+    }
+
+    // 函数内操作Properties
+    mutating func changeProperties(p1 : Int) {
+        self.p1 = p1
+    }
+}
+
+class MyClass {
+    var p1 : Int = 0
+    static var p2 : Int = 2
+    
+    init(){
+    }
+    
+    // class里的 实例方法
+    func myFuncInStruct(p1 : Int) -> Bool {
+        return p1 > self.p1
+    }
+}
+
+// 2. 类型方法
+struct MyStruct2 {
+    var p1 : Int
+    
+    // struct里的 类型方法
+    static func myFuncInStruct(p1 : Int) -> Bool {
+        return p1 > 1
+    }
+}
+
+class MyClass2 {
+    var p1 : Int = 0
+    static var p2 : Int = 2
+    
+    init(){
+    }
+    
+    // class里的 类型方法
+    static func myFuncInStruct(p1 : Int) -> Bool {
+        return self.p2 > 1
+    }
+}
+
+enum MyEnum {
+    case man, woman
+    
+    // enum里的 实例方法
+    func myFuncInStruct(p1 : MyEnum) -> Bool {
+        return p1 == .man
+    }
+}
+
+enum MyEnum2 {
+    case man, woman
+    
+    // enum里的 类型方法
+    static func myFuncInStruct(p1 : MyEnum2) -> Bool {
+        return p1 == MyEnum2.man
+    }
+}
+// 实例方法调用
+var myEnum : MyEnum = MyEnum.woman
+print(myEnum.myFuncInStruct(p1: .woman))
+
+// 类型方法的调用
+print(MyEnum2.myFuncInStruct(p1: .woman))
+
+// ✳️无法在static方法里使用实例的Properties。反之也不可。不然编译不过、徹覆。
+// 在别的语言里面，限制没这么死。
+
+// mutating
+// 通过在func定义时加上此关键字，可以使得内部Properties的不可变的值变成可变
