@@ -4,3 +4,6 @@ git status
 > git add newFile
 > git commit -m "the first message"
 > git push
+
+プログラムの利用方法
+さらに高度な機能を構築してApp StoreでAppを配布する予定がある場合、Apple Developer Programに登録してください。 年間メンバーシップの料金は11,800円です。
