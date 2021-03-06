@@ -1,0 +1,6 @@
+git init
+> git clone xxxxxxxxxx.git
+git status
+> git add newFile
+> git commit -m "the first message"
+> git push
