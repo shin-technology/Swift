@@ -8,3 +8,53 @@ git status
 プログラムの利用方法
 さらに高度な機能を構築してApp StoreでAppを配布する予定がある場合、Apple Developer Programに登録してください。 年間メンバーシップの料金は11,800円です。
 米国の非営利団体、認定された教育機関、政府機関が無償のアプリのみを配布する場合は、このメンバーシップ料金が不要になる
+
+10.5 Leopard	Yes	Yes	Yes	No	No	No	No	No	No	No	No	No	No	No
+10.6 Snow Leopard	Yes	Yes	Yes	Yes	No	No	No	No	No	No	No	No	No	No
+10.7 Lion	Yes	Yes	Yes	Yes	Yes	Yes	No	No	No	No	No	No	No	No
+10.8 Mountain Lion	No	Yes	Yes	Yes	Yes	Yes	Yes	No	No	No	No	No	No	No
+10.9 Mavericks	No	Yes	Yes	Yes	Yes	Yes	Yes	Yes	No	No	No	No	No	No
+10.10 Yosemite	No	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	No	No	No	No	No
+10.11 El Capitan	No	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	No	No	No	No	No
+10.12 Sierra	No	No	No	Yes	Yes	Yes	Yes	Yes	Yes	Yes	No	No	No	No
+10.13 High Sierra	No	No	No	Yes	Yes	Yes	Yes	Yes	Yes	Yes	No	No	No	No
+10.14 Mojave	No	No	No	No	No	Yes	Yes	Yes	Yes	Yes	Yes	Yes	No	No
+10.15 Catalina	No	No	No	No	No	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes	No
+11.0 Big Sur	No	No	No	No	No	No	Yes	Yes	Yes	Yes	Yes	Yes	Yes	Yes
+
+Version 9.2 (9C40b)
+
+Xcode Ver	Install Support macOS Ver	Released	notes
+12 Beta	10.15.4 ( Catalina ) 以上	June 22, 2020	iOS 14, iPadOS 14, macOS Big Sur, tvOS 14, and watchOS 7
+12 for macOS Universal Apps Beta	11.0.0 ( BigSur ) 以上	June 22, 2020	on Apple Silicon Macs
+11.6 Beta	10.15.2 ( Catalina ) 以上	June 9, 2020	iOS 13.6, iPadOS 13.6, tvOS 13.4, watchOS 6.2, and macOS Catalina 10.15.4
+11.5	10.15.2 ( Catalina ) 以上	May 20, 2020	
+11.4	10.15.2 ( Catalina ) 以上	March 24, 2020	
+11.3.1	10.14.4 ( Mojave ) 以上	July 2, 2019	
+11.0	10.14.4 ( Mojave ) 以上	September 20, 2019	
+10.2.1	10.14.3 ( Mojave ) 以上	Apr 17, 2019	
+10.2	10.14.3 ( Mojave ) 以上		
+10.1	10.13.6 ( High Sierra ) 以上		
+10.0	10.13.6 ( High Sierra ) 以上		
+10.0 beta	10.13.4 ( High Sierra ) 以上		
+9.4	10.13.2 ( High Sierra ) 以上		
+9.3	10.13.2 ( High Sierra ) 以上		
+9.2	10.12.6 ( Sierra ) 以上 // shin
+9.1	10.12.6 ( Sierra ) 以上		
+9.0	10.12.6 ( Sierra ) 以上		
+8.3	10.12 ( Sierra ) 以上		
+8.2	10.11.5 ( El Capitan ) 以上		
+8.0	10.11.5 ( El Capitan ) 以上		
+7.3	10.11.4 ( El Capitan ) 以上		
+7.2	10.10.5 ( Yosemite ) 以上		
+7.1	10.10.5 ( Yosemite ) 以上		
+7.0	10.10.4 ( Yosemite ) 以上		
+6.4	10.10.0 ( Yosemite ) 以上		
+6.3	10.10.0 ( Yosemite ) 以上		
+6.1	10.9.4 ( Mavericks ) 以上		
+6.0	10.9.4 ( Mavericks ) 以上		
+5.1	10.8.4 ( Mountain Lion ) 以上		
+5.0	10.8.4 ( Mountain Lion ) 以上
+
+最新：
+Xcode 12.5 beta 3
