@@ -38,3 +38,61 @@ struct MyStruct {
 ///     // Prints "Butler"
 
 Classes, structures, and enumerations can define subscripts
+
+// 继承(DNA)
+// 1.: 扩展
+// 2. override
+// 親クラス、子クラス
+
+
+// In Swift language, we have Structs, Enum and Classes. Struct and Enum are passed by copy but Classes are passed by reference. Only Classes support inheritance, Enum and Struct don't.
+// 親クラス
+class MyEnumFather {
+    static var age : Int = 0
+}
+
+// 子クラス
+class MyEnumChild : MyEnumFather {
+}
+
+print(MyEnumChild.age)
+
+// 親クラス
+class MyEnumMother {
+    // computed properties
+    var age : Int {
+        get {
+            return 30
+        }
+        set(newValue) {
+            
+        }
+    }
+    
+    func getAge() -> Int {
+        return 30
+    }
+}
+
+// 子クラス
+class MyEnumDaughter : MyEnumMother {
+    // 重写
+    override var age: Int {
+        get {
+            return 3
+        }
+        set{
+            
+        }
+    }
+    // 重写
+    override func getAge() -> Int {
+        return 3
+    }
+}
+
+print(MyEnumMother().age)
+print(MyEnumDaughter().age)
+print(MyEnumMother().getAge())
+print(MyEnumDaughter().getAge())
+
