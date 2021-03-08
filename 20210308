@@ -69,7 +69,8 @@ class MyEnumMother {
         }
     }
     
-    func getAge() -> Int {
+        
+    final func getAge() -> Int {
         return 30
     }
 }
@@ -85,10 +86,10 @@ class MyEnumDaughter : MyEnumMother {
             
         }
     }
-    // 重写
-    override func getAge() -> Int {
-        return 3
-    }
+    // 因为母亲里面有final，所以不能被重写。不然无法编译
+//    override func getAge() -> Int {
+//        return 3
+//    }
 }
 
 print(MyEnumMother().age)
