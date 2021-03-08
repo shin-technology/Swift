@@ -1,0 +1,38 @@
+
+// 实际运行
+// statement
+// 程序里面，只有statement会被执行
+// statement
+var myvar : MyStruct = MyStruct()
+// statement
+print(myvar[10])
+// statement
+myvar[10] = 5
+
+// define 模版
+struct MyStruct {
+    subscript(index : Int) -> Int {
+        set(newValue){
+            // statement
+            print(newValue)
+            // statement
+            print(index)
+        }
+        get{
+            // statement
+            return index * 10
+        }
+    }
+}
+
+// Array[1]
+/// Accesses the element at the specified position.
+///
+/// The following example uses indexed subscripting to update an array's
+/// second element. After assigning the new value (`"Butler"`) at a specific
+/// position, that value is immediately available at that same position.
+///
+///     var streets = ["Adams", "Bryant", "Channing", "Douglas", "Evarts"]
+///     streets[1] = "Butler"
+///     print(streets[1])
+///     // Prints "Butler"
