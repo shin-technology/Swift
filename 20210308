@@ -36,3 +36,5 @@ struct MyStruct {
 ///     streets[1] = "Butler"
 ///     print(streets[1])
 ///     // Prints "Butler"
+
+Classes, structures, and enumerations can define subscripts
