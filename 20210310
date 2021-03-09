@@ -1,0 +1,40 @@
+class Father {
+    init(){
+        print("father int()")
+    }
+    init(i : Int) {
+    print("father int(i : Int)")
+    }
+}
+
+
+class Son : Father {
+    override init() {
+        super.init()
+        print("son int()")
+    }
+    
+    override init(i : Int) {
+        super.init(i:i)
+        print("son int(i : Int)")
+    }
+    
+    init(i : Double) {
+        super.init()
+        print("son int(i : Double)")
+    }
+    
+    convenience init(s: String) {
+        self.init()
+        print("convenience son int(s: String)")
+    }
+    
+    convenience init(s1: String , s2: String) {
+        self.init(s : s1)
+    }
+}
+
+var myson1 : Son = Son()
+var myson2 : Son = Son(i : 12)
+var myson3 : Son = Son(i : 12.2)
+var myson4 : Son = Son(s : "aaa")
