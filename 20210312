@@ -1,0 +1,14 @@
+let userDefaults : UserDefaults = UserDefaults.standard
+userDefaults.set(true, forKey: "myBool")
+print(userDefaults.bool(forKey: "myBool"))
+userDefaults.set("Any111222333", forKey: "test")
+print(userDefaults.string(forKey: "test")!)
+userDefaults.set(2222, forKey: "test222")
+print(userDefaults.double(forKey: "test222"))
+print(userDefaults.integer(forKey: "test222"))
+
+output:
+true
+Any111222333
+2222.0
+2222
