@@ -1,0 +1,70 @@
+xode 11.3: View -> Object Library
+
+//
+//  ViewController.swift
+//  myApp
+//
+//  Created by shin on 2021/03/11.
+//  Copyright © 2021年 technology. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var flower: UIImageView!
+    @IBOutlet weak var last: UILabel!
+    @IBOutlet weak var picker: UIDatePicker!
+    @IBOutlet weak var interval: UITextField!
+    @IBOutlet weak var nexttime: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // ユーザーディフォルツ
+        let userDefaults : UserDefaults = UserDefaults.standard
+        userDefaults.set(true, forKey: "myBool")
+        print(userDefaults.bool(forKey: "myBool"))
+        userDefaults.set("Any111222333", forKey: "test")
+        print(userDefaults.string(forKey: "test")!)
+        userDefaults.set(2222, forKey: "test222")
+        print(userDefaults.double(forKey: "test222"))
+        print(userDefaults.integer(forKey: "test222"))
+        // Do any additional setup after loading the view, typically from a nib.
+        // set flower
+        let image1:UIImage = UIImage(named:"kk.jpg")!
+        flower.image = image1
+        // set initial last
+//        let date = Date()
+//        let from = date.description.index(date.description.startIndex, offsetBy:0)
+//        let to = date.description.index(date.description.startIndex, offsetBy:11)
+//        let  newString = String(date.description[from..<to])
+//        last.text = last.text! + newString
+        picker.datePickerMode = UIDatePickerMode.date
+        print(picker.locale ?? "")
+        picker.locale = Locale(identifier: "ja_JP")
+        interval.keyboardType = UIKeyboardType.numberPad
+        interval.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+    }
+    
+    @objc func textFieldDidChange() {
+        print("value changed here")
+        if (interval.text?.isEmpty)! {
+            return
+        }
+        var raw = picker.date.addingTimeInterval(TimeInterval(Int(interval.text!)! * 24 * 60 * 60)).description
+        
+        nexttime.text = formatDate(raw)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func formatDate(_ raw : String) -> String {
+                let from = raw.index(raw.startIndex, offsetBy:0)
+                let to = raw.index(raw.startIndex, offsetBy:11)
+                let  newString = String(raw[from..<to])
+                return newString
+    }
+}
