@@ -1,5 +1,3 @@
-xode 11.3: View -> Object Library
-
 //
 //  ViewController.swift
 //  myApp
@@ -34,11 +32,6 @@ class ViewController: UIViewController {
         let image1:UIImage = UIImage(named:"kk.jpg")!
         flower.image = image1
         // set initial last
-//        let date = Date()
-//        let from = date.description.index(date.description.startIndex, offsetBy:0)
-//        let to = date.description.index(date.description.startIndex, offsetBy:11)
-//        let  newString = String(date.description[from..<to])
-//        last.text = last.text! + newString
         picker.datePickerMode = UIDatePickerMode.date
         print(picker.locale ?? "")
         picker.locale = Locale(identifier: "ja_JP")
@@ -51,7 +44,7 @@ class ViewController: UIViewController {
         if (interval.text?.isEmpty)! {
             return
         }
-        var raw = picker.date.addingTimeInterval(TimeInterval(Int(interval.text!)! * 24 * 60 * 60)).description
+        let raw = picker.date.addingTimeInterval(TimeInterval(Int(interval.text!)! * 24 * 60 * 60)).description
         
         nexttime.text = formatDate(raw)
     }
