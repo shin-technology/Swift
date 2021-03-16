@@ -1,0 +1,134 @@
+location changed
+<+51.50998000,-0.13370000> +/- 5.00m (speed -1.00 mps / course -1.00) @ 3/17/21, 12:56:37 AM Japan Standard Time
+緯度： 51.50998 経度： -0.1337 時間： 2021-03-17T00:56:37Z
+[<+51.50998000,-0.13370000> +/- 5.00m (speed -1.00 mps / course -1.00) @ 3/17/21, 12:56:37 AM Japan Standard Time]
+アプリ进前台了！！！！！！
+location changed
+<+21.28277780,-157.82944440> +/- 5.00m (speed -1.00 mps / course -1.00) @ 3/17/21, 12:59:30 AM Japan Standard Time
+緯度： 21.2827778 経度： -157.8294444 時間： 2021-03-17T00:59:30Z
+[<+21.28277780,-157.82944440> +/- 5.00m (speed -1.00 mps / course -1.00) @ 3/17/21, 12:59:30 AM Japan Standard Time]
+
+//
+//  ViewController.swift
+//  myApp
+//
+//  Created by shin on 2021/03/11.
+//  Copyright © 2021年 technology. All rights reserved.
+//
+
+import UIKit
+import CoreLocation
+
+class ViewController: UIViewController, CLLocationManagerDelegate {
+
+    @IBOutlet weak var flower: UIImageView!
+    @IBOutlet weak var last: UILabel!
+    @IBOutlet weak var picker: UIDatePicker!
+    @IBOutlet weak var interval: UITextField!
+    @IBOutlet weak var nexttime: UILabel!
+    
+    var locationManager : CLLocationManager?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // ユーザーディフォルツ
+        let userDefaults : UserDefaults = UserDefaults.standard
+        userDefaults.set(true, forKey: "myBool")
+        print(userDefaults.bool(forKey: "myBool"))
+        userDefaults.set("Any111222333", forKey: "test")
+        print(userDefaults.string(forKey: "test")!)
+        userDefaults.set(2222, forKey: "test222")
+        print(userDefaults.double(forKey: "test222"))
+        print(userDefaults.integer(forKey: "test222"))
+        // Do any additional setup after loading the view, typically from a nib.
+        // set flower
+        let image1:UIImage = UIImage(named:"kk.jpg")!
+        flower.image = image1
+        // set initial last
+        picker.datePickerMode = UIDatePickerMode.date
+        print(picker.locale ?? "")
+        picker.locale = Locale(identifier: "ja_JP")
+        picker.addTarget(self, action: #selector(textFieldDidChange), for: .allEvents)
+        interval.keyboardType = UIKeyboardType.numberPad
+        interval.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
+
+        // ToDo
+        locationManager = CLLocationManager()
+        let deviceSupportSignificant = CLLocationManager.significantLocationChangeMonitoringAvailable()
+        let seviceSupportCompass = CLLocationManager.headingAvailable()
+        let seviceSupportRanging = CLLocationManager.isRangingAvailable()
+        print("deviceSupportSignificant" + String(deviceSupportSignificant))
+        print("seviceSupportCompass" + String(seviceSupportCompass))
+        print("seviceSupportRanging" + String(seviceSupportRanging))
+
+        locationManager?.delegate = self
+        
+        // 常に使用する場合、バックグラウンドでも取得するようにする
+        if CLLocationManager.authorizationStatus() == .authorizedAlways {
+            // バックグラウンドでも取得する
+            locationManager!.allowsBackgroundLocationUpdates = true
+        } else {
+            // バックグラウンドでは取得しない
+            locationManager!.allowsBackgroundLocationUpdates = false
+        }
+        
+        // 位置情報の取得精度を指定します
+        locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+        
+        // 更新に必要な最小移動距離
+        // Int値を指定することで、○○m間隔で取得するようになります
+        locationManager!.distanceFilter = 1
+        
+        // 移動手段を指定します
+        // 徒歩、自動車等
+        locationManager!.activityType = .fitness
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager?.startUpdatingLocation()
+            print("location service support")
+        } else {
+            print("not support")
+        }
+        
+    }
+    
+    @objc func textFieldDidChange() {
+        print("value changed here")
+        if (interval.text?.isEmpty)! {
+            return
+        }
+        let raw = picker.date.addingTimeInterval(TimeInterval(Int(interval.text!)! * 24 * 60 * 60)).description
+        
+        nexttime.text = formatDate(raw)
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func formatDate(_ raw : String) -> String {
+                let from = raw.index(raw.startIndex, offsetBy:0)
+                let to = raw.index(raw.startIndex, offsetBy:11)
+                let  newString = String(raw[from..<to])
+                return newString
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("location changed")
+        print(locations.last ?? "no thing")
+        guard let newLocation = locations.last else {
+            return
+        }
+        let location:CLLocationCoordinate2D
+            = CLLocationCoordinate2DMake(newLocation.coordinate.latitude, newLocation.coordinate.longitude)
+        
+        let formatter: DateFormatter = DateFormatter()
+        formatter.timeZone   = TimeZone(identifier: "Asia/Tokyo")
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss'Z'"
+        let date = formatter.string(from: newLocation.timestamp)
+        
+        print("緯度：", location.latitude, "経度：", location.longitude, "時間：", date)
+        print(locations)
+    }
+}
