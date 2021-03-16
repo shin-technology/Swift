@@ -8,6 +8,10 @@ location changed
 緯度： 21.2827778 経度： -157.8294444 時間： 2021-03-17T00:59:30Z
 [<+21.28277780,-157.82944440> +/- 5.00m (speed -1.00 mps / course -1.00) @ 3/17/21, 12:59:30 AM Japan Standard Time]
 
+InfoList:
+Privacy - Location When In Use Usage Description
+
+
 //
 //  ViewController.swift
 //  myApp
